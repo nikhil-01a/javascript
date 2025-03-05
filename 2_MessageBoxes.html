@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* We have three standard javascript boxes:
+        1. Alert
+        2. Prompt
+        3. Confirm
+        */
+
+      // Alert: This is to just show an alert. It comes from the window object provided by the browser
+      window.alert("Hi this is an alert test");
+      alert("This is another alert");
+
+      // Prompt: This is to take a text imput from the user
+      let name = prompt("Please enter your name:");
+      alert("Hello " + name + ". Welcome back!!!");
+
+      // Confirm: This is to accept boolean values: Yes or No
+      let navigate = confirm("Do you want to navigate elsewhere?");
+      if (navigate) alert("User wants to navigate");
+      else alert("User doesn't want to navigate");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Datatypes</title>
+  </head>
+  <body>
+    <script>
+      // Two types of datatypes:
+
+      // A. Primitive types:
+      // 1. number
+      let a = 5;
+      let floatNumber = 12213.324234;
+      console.log(typeof a);
+      console.log(typeof floatNumber);
+      // 2. string
+      let name = "Nikhil";
+      let initial = "G";
+      console.log(typeof name);
+      console.log(typeof initial);
+      // 3. boolean
+      let isActive = false;
+      let flag = true;
+      console.log(typeof isActive);
+      console.log(typeof flag);
+      // 4. undefined
+      let somethingUndefined;
+      console.log(typeof somethingUndefined);
+      // 5. null : But it will say it is an object
+      let soemthingNull = null;
+      console.log(typeof soemthingNull);
+      // 6. bigint: you should use n notation after the number to say it is bigint
+      let somethingBigInteger = 6757n;
+      console.log(typeof somethingBigInteger);
+      // 7. symbol
+      // Create a regular symbol
+      const regularStatus = Symbol("RegularStatus");
+      console.log(regularStatus);
+      // Create a global symbol
+      const globalStatus = Symbol.for("GlobalStatus");
+      console.log(globalStatus);
+      console.log(typeof globalStatus);
+      // Use it in an object
+      let symbolTestObject = {
+        name: "Nikhil",
+        [globalStatus]: "Pending",
+      };
+      console.log(symbolTestObject[globalStatus]);
+      console.log(symbolTestObject.name);
+      // Iteration time the symbol key is hidden
+
+      // Reference Types:
+
+      // 1. Object
+      let newObject = {
+        testKey1String: "This is string test key",
+        testKey2Number: 2,
+        testKey3Boolean: true,
+        testKey4Underfined: "Need to add something, can't keep underfined",
+        testKey5NullKey: null,
+        testKey6BigInt: 123n,
+        [regularStatus]: "StatusSymbolTest6FromObject",
+      };
+      console.table(newObject);
+      console.log(typeof newObject);
+      // Different Objects
+
+      // Array Object: First way
+      let newArrayFromConstructor = new Array("Hi", "This", "is", "me");
+      console.log(newArrayFromConstructor);
+      // Array Object: Second way
+      let newArrayFromBox = ["Hi", "Me", "From", "Box"];
+      console.log(newArrayFromBox);
+
+      // Exercise: The objects of references are stored in heap and the reference variables hold the memory address of those objects with them in stack
+      let firstArray = [1, 2];
+      let secondArray = [1, 2];
+      // The references of different objects are not equal
+      if (firstArray === secondArray) {
+        console.log("Both arrays are equal: ", firstArray, secondArray);
+      } else {
+        console.log("Both arrays are not equal, we comparing references: ", firstArray, "AND", secondArray);
+      }
+
+      // Date Object:
+      let newDate = new Date();
+      console.log(newDate);
+      console.log(typeof newDate);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = "Nikhil";
+      console.log(name);
+      console.info("This is an info test");
+      console.warn("This is a warning test");
+      console.error("This is an error test");
+      let exampleObject = {
+        name: "Macbook Air",
+        ram: "16 GB",
+        brand: "Apple",
+        item: "Laptop",
+        screenSize: "16 inch",
+      };
+      console.log(exampleObject);
+      console.table(exampleObject);
+
+      // Call the function once after 5 seconds
+      setTimeout(function () {
+        console.log(
+          "Hi, this is from the setTimeout function, runs once after 5 seconds!"
+        );
+      }, 5000);
+
+      // Call the function once after 10 seconds
+      setInterval(function () {
+        console.log(
+          "Hi, this is from the setInterval function, runs every 10 seconds, followed by a clear function that runs every 20 seconds!"
+        );
+      }, 10000);
+
+      // Call the function repeatedly every 15 seconds
+      setInterval(function () {
+        console.clear();
+      }, 20000);
+    </script>
+  </body>
+</html>
