@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String properties and functions</title>
+  </head>
+  <body>
+    <script>
+      // String properties:
+      // 1.length
+      let greeting = "Hello there! ";
+      let greetingLength = greeting.length;
+      console.log("Greeting length: " + greetingLength);
+
+      // String functions:
+      // 1. concat()
+      let name = "Nikhil";
+      let fullVerse = greeting.concat("My name is ", name);
+      console.log("Concatenate test: " + fullVerse);
+
+      // 2. charAt()
+      let firstLetterOfName = name.charAt(0);
+      let outOfRangeIndex = name.charAt(255); // returns an empty string
+      console.log("First Letter of my Name:", firstLetterOfName);
+      console.log("Out of range index: ", outOfRangeIndex);
+
+      // 3. indexOf()
+      // Returns index from where the given string starts, Returns -1 if character doesn't exist, It is case-sensitive, Index starts with 0.
+      let indexOfI = name.indexOf("I");
+      let indexOfi = name.indexOf("i");
+      console.log("Index of I in my name:", indexOfI);
+      console.log("Index of i in my name:", indexOfi);
+      console.log("Index of ikh in my name", name.indexOf("ikh"));
+
+      // 4. lastIndexOf()
+      // Returns index from where the given string starts but searches the string from the end, Returns -1 if character doesn't exist, It is case-sensitive, Index starts with 0.
+      console.log("Last index of I in my name:", name.lastIndexOf("I"));
+      console.log("Last index of i in my name:", name.lastIndexOf("i"));
+      console.log("Last index of ikh in my name:", name.lastIndexOf("ikh"));
+
+      // 5. toUpperCase()
+      console.log("My name in all Upper Case", name.toUpperCase());
+
+      // 6. toLowerCase()
+      console.log("My name in all Lower Case", name.toLowerCase());
+
+      // 7. endsWith()
+      // Returns a boolean if the string ends with the given string. It is case-sensitive.
+      console.log("Does my name end with il?", name.endsWith("il"));
+      console.log("Does my name end with L?", name.endsWith("L"));
+
+      // 8. startsWith()
+      // Returns a boolean if the string starts with the given string. It is case-sensitive.
+      console.log("Does my name start with Nik?", name.startsWith("Nik"));
+      console.log("Does my name start with nI?", name.startsWith("nI"));
+
+      // 9. substring()
+      // Returns a part of string between start and end index. Start is included. End is excluded.
+      console.log("Retrieve substring part ikh in Nikhil:", name.substring(1, 4));
+
+      // 10. trim()
+      // Removes whitespaces from front and back of the string
+      let someStringWithSpaces = "      Hi there, this is a test string!      ";
+      console.log("Test String:", someStringWithSpaces);
+      console.log("Test String trimmed:", someStringWithSpaces.trim());
+
+      // 11. split()
+      // Splits the string using a delimiter and stores the results in a string array
+      let splittedGreeting = greeting.split(" ");
+      console.log("Splitted greeting: Hello there!. Delimiter used is whitespace: ", splittedGreeting);
+      console.table(splittedGreeting);
+      console.log("First index of splittedGreeting: ", splittedGreeting[0]);
+      console.log("Second index of splittedGreeting: ", splittedGreeting[1]);
+      console.log("Third index of splittedGreeting: ", splittedGreeting[2]);
+      console.log("Out of range index of splittedGreeting: ", splittedGreeting[225]);
+    </script>
+  </body>
+</html>
