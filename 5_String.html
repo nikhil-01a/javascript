@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String in Javascript</title>
+  </head>
+  <body>
+    <script>
+      // Two ways to create Strings:
+      /* 1. Using literal: there are three ways using literal:
+                a. Using single quotes
+                b. Using double quotes
+                c. Using backticks */
+
+      let name = "nikhil"; // Was supposed to be single quotes but vscode linter makes it double on save
+      let name1 = "nikhil";
+      let name2 = `Hi! My name is Nikhil.
+                    I can use backticks to 
+                        type multi-line strings and keep the format btw!`;
+
+      // 2. Using Object
+
+      let name3 = new String("Nikhil");
+
+      // String interpolation: We can do string interpolation if we use backticks to create strings:
+      // 1. Use ${variableName}
+      // 2. Or Use ${expression}
+
+      let a = 2;
+      let b = 3;
+      let c = a + b;
+      let interpolationSum = `The sum of ${a} and ${b} is ${c}`;
+      console.log(`I'm using interpolation to display this number: ${c + 5}`);
+    </script>
+  </body>
+</html>
