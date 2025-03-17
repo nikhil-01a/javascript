@@ -25,7 +25,12 @@
       console.log("First Letter of my Name:", firstLetterOfName);
       console.log("Out of range index: ", outOfRangeIndex);
 
-      // 3. indexOf()
+      // 3. []
+      // Box Operator, used to get the character at an index in the string or get the element at an index in an array
+      console.log(name[0] + " First letter of the string name: Using the Box Operator"); // Returns the first character in name
+      console.log(name[96] + " Letter at a random out of range index: Using Box Operator"); // Returns undefined
+
+      // 4. indexOf()
       // Returns index from where the given string starts, Returns -1 if character doesn't exist, It is case-sensitive, Index starts with 0.
       let indexOfI = name.indexOf("I");
       let indexOfi = name.indexOf("i");
@@ -33,39 +38,39 @@
       console.log("Index of i in my name:", indexOfi);
       console.log("Index of ikh in my name", name.indexOf("ikh"));
 
-      // 4. lastIndexOf()
+      // 5. lastIndexOf()
       // Returns index from where the given string starts but searches the string from the end, Returns -1 if character doesn't exist, It is case-sensitive, Index starts with 0.
       console.log("Last index of I in my name:", name.lastIndexOf("I"));
       console.log("Last index of i in my name:", name.lastIndexOf("i"));
       console.log("Last index of ikh in my name:", name.lastIndexOf("ikh"));
 
-      // 5. toUpperCase()
+      // 6. toUpperCase()
       console.log("My name in all Upper Case", name.toUpperCase());
 
-      // 6. toLowerCase()
+      // 7. toLowerCase()
       console.log("My name in all Lower Case", name.toLowerCase());
 
-      // 7. endsWith()
+      // 8. endsWith()
       // Returns a boolean if the string ends with the given string. It is case-sensitive.
       console.log("Does my name end with il?", name.endsWith("il"));
       console.log("Does my name end with L?", name.endsWith("L"));
 
-      // 8. startsWith()
+      // 9. startsWith()
       // Returns a boolean if the string starts with the given string. It is case-sensitive.
       console.log("Does my name start with Nik?", name.startsWith("Nik"));
       console.log("Does my name start with nI?", name.startsWith("nI"));
 
-      // 9. substring()
+      // 10. substring()
       // Returns a part of string between start and end index. Start is included. End is excluded.
       console.log("Retrieve substring part ikh in Nikhil:", name.substring(1, 4));
 
-      // 10. trim()
+      // 11. trim()
       // Removes whitespaces from front and back of the string
       let someStringWithSpaces = "      Hi there, this is a test string!      ";
       console.log("Test String:", someStringWithSpaces);
       console.log("Test String trimmed:", someStringWithSpaces.trim());
 
-      // 11. split()
+      // 12. split()
       // Splits the string using a delimiter and stores the results in a string array
       let splittedGreeting = greeting.split(" ");
       console.log("Splitted greeting: Hello there!. Delimiter used is whitespace: ", splittedGreeting);
@@ -75,7 +80,7 @@
       console.log("Third index of splittedGreeting: ", splittedGreeting[2]);
       console.log("Out of range index of splittedGreeting: ", splittedGreeting[225]);
 
-      // 12. replace()
+      // 13. replace()
       // Replaces the first occurence of the string in a given string. Returns a new string as a result. Case sensitive.
       let a = "Some caps string and some other string with small some other string";
       let b = a.replace("some", "new");
