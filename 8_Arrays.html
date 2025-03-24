@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Arrays</title>
+  </head>
+  <body>
+    <script>
+      // Arrays
+
+      // Properties:
+      // 1. Type is not fixed
+      // 2. Size is not fixed
+
+      /////////////////////////////////// Create an Array //////////////////////////////
+      // 1. Using Square Brackets
+      let firstArray = ["Nikhil", "FirstRank", ["Math", "Science"], 14];
+      console.log("First Array: ", firstArray);
+      // 2. Using Constructor
+      let secondArray = new Array(5); // With Size
+      console.log("Second Array's (Size Defined) first element: ", secondArray[0]); // Undefined
+      let thirdArray = new Array("Nikhil", "FirstRank", ["Math", "Science"], 14); // With Elements
+      console.log("Third Array's (Elements defined) second element's zeroeth element: ", thirdArray[2][0]);
+      let fourthArray = new Array(); // Without Size
+      fourthArray.push("Element Pushed");
+      console.log("Fourth Array with an element pushed in it: ", fourthArray);
+    </script>
+  </body>
+</html>
