@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Conversion in Javascript</title>
+  </head>
+  <body>
+    <script>
+      // 3 Most Common Type conversions
+
+      ////////////////// STRING //////////////////////
+
+      // a. Using String()
+      let aNumber = 23;
+      let aBoolean = false;
+      let aStringFromNumber = String(aNumber);
+      let aStringFromBoolean = String(aBoolean);
+      console.log("String(): ", aStringFromNumber);
+      console.log("String(): ", aStringFromBoolean);
+
+      // b. Using toString()
+      let anArray = ["this", "is", "an", "array"];
+      let anObject = {
+        firstProperty: "this is first one",
+        secondProperty: 23,
+        thirdProperty: false,
+      };
+      let aDate = new Date();
+      let anError = new Error("This is an error message");
+      // Functions
+      function aTraditionalFunction(tradion) {
+        return tradion;
+      }
+      let aTraditionalFunctionVariable = function anAssignableFunction(aParameter) {
+        return aParameter;
+      };
+      let anAnonymousFunction = () => {
+        return "response from a fucntion";
+      };
+      console.log("To String Function: ", aNumber.toString());
+      console.log("To String Function: ", aBoolean.toString());
+      console.log("To String Function: ", anArray.toString());
+      console.log("To String Function: ", anObject.toString());
+      console.log("To String Function: ", aDate.toString());
+      console.log("To String Function: ", anError.toString());
+      console.log("To String Function: ", aTraditionalFunction.toString());
+      console.log("To String Function: ", aTraditionalFunctionVariable.toString());
+      console.log("To String Function: ", anAnonymousFunction.toString());
+
+      ////////////////// NUMERIC //////////////////////
+
+      // 1. Number()
+      let aString = "123";
+      let aNumberFromString = Number(aString); // aNumberFromString is 123
+      let aNumberFromBoolean = Number(aBoolean); // aNumberFromBoolean is 0, For true the value is 1
+      let undefinedNumber = Number(undefined); // undefinedNumber is NaN
+      let nullNumber = Number(null); //nullNumber is 0
+      console.log("Number(): ", aNumberFromString);
+      console.log("Number(): ", aNumberFromBoolean);
+      console.log("Number(): ", undefinedNumber);
+      console.log("Number(): ", nullNumber);
+
+      // 2. parseInt() and parseFloat()
+      let anIntInString = "112";
+      let anInteger = parseInt(anIntInString);
+      let aFloatInString = "12.45";
+      let aFloat = parseFloat(aFloatInString);
+      console.log("parseInt(): ", anIntInString);
+      console.log("parseFloat(): ", aFloatInString);
+
+      ////////////////// BOOLEAN //////////////////////
+
+      // 1. Boolean()
+      let aNonEmptyString = "Something in the string";
+      let aBooleanFromString = Boolean(aNonEmptyString); // aBooleanFromString is true
+      let anEmptyString = "";
+      let aBooleanFromAnEmptyString = Boolean(anEmptyString); // aBooleanFromAnEmptyString is false
+      let aZeroNumber = 0;
+      let aBooleanFromZeroNumber = Boolean(aZeroNumber); // aBooleanFromNumber is false
+      let aNegativeNumber = -39;
+      let aBooleanFromNumber = Boolean(aNegativeNumber); // aBooleanFromNumber is true; any number other than 0 is true.
+      console.log("Boolean(): ", aBooleanFromString);
+      console.log("Boolean(): ", aBooleanFromAnEmptyString);
+      console.log("Boolean(): ", aBooleanFromZeroNumber);
+      console.log("Boolean(): ", aBooleanFromNumber);
+    </script>
+  </body>
+</html>
