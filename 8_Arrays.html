@@ -25,6 +25,44 @@
       let fourthArray = new Array(); // Without Size
       fourthArray.push("Element Pushed");
       console.log("Fourth Array with an element pushed in it: ", fourthArray);
+
+      /////////////////////////////////// Array Operations //////////////////////////////
+      // 1. length
+      let firstArrayOp = ["2", "Nik", "AnotherElement"];
+      let firstArrayLength = firstArrayOp.length; // returns 3
+      console.log("Length function/method: ", firstArrayLength);
+
+      // 2. forEach()
+      let loanStatus = ["New", "Inventory", "Closed", "Paid Off"];
+      loanStatus.forEach(function (x, y, z) {
+        console.log("Index: ", y, " => ", "Status: ", x);
+      }); // Using anonymous function. forEach passes three arguments in its callback function: arrayElement, arrayIndex and array
+
+      // 3. push() : adds element to the end of an array
+      loanStatus.push("Unsettled");
+      console.log("loanStatus after push: ", loanStatus);
+
+      // 4. pop() : removes element from the end of an array
+      loanStatus.pop();
+      console.log("loanStatus after pop: ", loanStatus);
+
+      // 5. unshift() : adds element to the beginning of an array
+      loanStatus.unshift("Canceled");
+      console.log("loanStatus after unshift: ", loanStatus);
+
+      // 6. shift() : removes element from the beginning of an array
+      loanStatus.shift();
+      console.log("loanStatus after shift: ", loanStatus);
+
+      // 7. splice() : removes elements from an array from the index given to n
+      loanStatus.splice(0, 2); // Removes 2 elements starting from index 0
+      console.log("loanStatus after splice: 2 elements from 0: ", loanStatus);
+
+      // 8. slice() : shallow copies an array, it only copies the reference. (memory address number)
+      console.log("Shallow copy of loanStatus Array: ", loanStatus.slice());
+
+      // 9. indexOf() : returns the index of given element
+      console.log("Index of 'closed' in loanStatus Array: ", loanStatus.indexOf("Closed"));
     </script>
   </body>
 </html>
