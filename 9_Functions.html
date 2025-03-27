@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Functions</title>
+  </head>
+  <body>
+    <script>
+      // All Types Of Functions:
+
+      // 1. Named Function
+      function greet1(name) {
+        return `Hello ${name}!`;
+      }
+      console.log("Greet from Named Function: ", greet1("Nikhil"));
+
+      // 2. Named Function Expression: Can be called recursively with its own name.
+      const greetFunct1 = function greetMultipleTimes(greet, num) {
+        --num;
+        if (num <= 0) return greet;
+        return greet + greetMultipleTimes(greet, num);
+      };
+      console.log("Greet from Named Function Expression: ", greetFunct1("Hello Nikhil ", 3));
+
+      // 3. Anonymous Function Expression:
+      const greetFunct2 = function () {
+        return "Hello Nikhil";
+      };
+      console.log("Greet from Anonymous Function Expression: ", greetFunct2());
+
+      // 4. Anonymous Arrow Function Expression:
+      const greetFunct3 = () => {
+        return "Hello Nikhil";
+      };
+      console.log("Greet from Anonymous Arrow Function Expression: ", greetFunct3());
+
+      // 5. Anonymous Arrow Function Expression (Single Line):
+      const greetFunct4 = (name) => `Hello ${name}!`;
+      console.log("Greet from anonymous arrow function expression (single line): ", greetFunct4("Nikhil"));
+
+      // 6. Constructor Function:
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      let newPerson = new Person("Nikhil", 26);
+      console.log("Object created by Constructor Function: ", newPerson);
+
+      // 7. Optional Parameter with Default Value Function:
+      function greet2(name = "there") {
+        return `Hello ${name}!`;
+      }
+      console.log("Greet from a function with default parameter value: ", greet2());
+
+      // 8. Multiple Arguments in Single Parameter Function:
+      function greet3(...names) {
+        let allNamesWithComma = names.reduce((accumulator, name) => accumulator + name + " ", "");
+        console.log("Hello ", allNamesWithComma);
+        return `Hello ${allNamesWithComma}!`;
+      }
+      // Reduce Syntax: reduce(accumulatorParam, eachItem) => accumulatorParam + eachItem OR any other operation , accumulatorInitialValue);
+      console.log("Greet from a function with spread operator parameter: ", greet3("Nikhil,", "Raj,", "Alex"));
+
+      // 9. Async Function With Await: It always returns the response wrapped in a Promise object:
+      async function asyncGreet(name) {
+        const greet = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Hello ${name}!`);
+          }, 2000);
+        });
+
+        // Can also use:- const greet = await fetch('api.greetings.come');
+        console.log("Greet coming from an async <- await <- Promise function: ", greet);
+      }
+      asyncGreet("Nikhil");
+
+      // 10. Immediate Function Invocation:
+      (function () {
+        console.log("Greet from an Immediate Invocation Function: Hello Nikhil!");
+      })();
+
+      // 11. Generator Function: Pauses execution at every yield. It uses the next().value to go to the next yield.
+      function* generatorGreet() {
+        yield "Hello";
+        yield "World";
+      }
+      const greetExpression = generatorGreet();
+      console.log("First Yield Stop: ", greetExpression.next().value); // Prints 'Hello'
+      console.log("Second Yield Stop: ", greetExpression.next().value); // Prints 'World'
+    </script>
+  </body>
+</html>
