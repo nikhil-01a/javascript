@@ -27,6 +27,29 @@
         console.log(`This is a message coming from a do while loop. This is the ${k}th message.`);
         k++;
       } while (k <= 10);
+
+      // 4. for..in loop
+      // Used to iterate array elements and the properties of objects
+      let st = {
+        name: "Nikhil",
+        age: 26,
+        dob: new Date("08/29/1998"),
+        enrolledInCollege: false,
+      };
+      let arr = ["ABC", "DEF", "GHI"];
+      for (let k in st) {
+        console.log(`This is for..in loop and for key ${k} the value is ${st[k]}`);
+      }
+      for (let index in arr) {
+        console.log(`This is for..in loop and for index ${index} the value is ${arr[index]}`);
+      }
+
+      // 5. for..of loop
+      // Used to iterate iterable objects
+      let newArr = ["ABC", "DEF", "GHI"];
+      for (value of arr) {
+        console.log(`This is for..of loop. Printing the value : ${value}.`);
+      }
     </script>
   </body>
 </html>
