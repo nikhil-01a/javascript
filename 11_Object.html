@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Object</title>
+  </head>
+  <body>
+    <h1>Javascript Object</h1>
+    <script>
+      const dynamicProperty = "Indian Hometown";
+      const someSymbol = Symbol("id"); // no 'new' keyword because Symbol doesn't create an object it creates a new symbol primitive value
+
+      const person = {
+        // 1. Data Properties
+        name: "Nikhil",
+        "last name": "Kumar",
+        age: 26,
+        dob: new Date("1998-08-29"),
+        isActive: true,
+        score: undefined,
+        notes: null,
+        hobbies: ["coding", "music"],
+        order: function () {
+          console.log(`This order() is designed to order Paneer for: ${this.name}`);
+        },
+
+        // 2. Direct Function
+        greet() {
+          console.log(`Hi! My name is ${this.name}. This is from greet()`);
+        },
+
+        // 3. Nested Object
+        address: {
+          street: "SP Road",
+          pin: 560002,
+          state: "Karnataka",
+        },
+
+        // 4. Accessor Properties
+        _email: "nikhilkumar01g@gmail.com",
+        get email() {
+          return this._email;
+        },
+        set email(value) {
+          this._email = value;
+        },
+
+        // 5. Dynamic Property
+        [dynamicProperty]: "Bangalore",
+
+        // 6. Symbol Property
+        [someSymbol]: "some value for symbol",
+      };
+
+      // 7. New property after inheriting from another object
+      const developer = Object.create(person);
+      developer.programmingLanguage = "javascript";
+
+      // Printing all
+      console.log("string: name: ", person.name);
+      console.log("string with spaced key: [last name] (Use Box Operator): ", person["last name"]); // Use Box Operator
+      console.log("integer: age: ", person.age);
+      console.log("date: dob: ", person.dob);
+      console.log("boolean: isActive: ", person.isActive);
+      console.log("undefined: score: ", person.score);
+      console.log("null: notes: ", person.notes);
+      console.log("Array: hobbies: ", person.hobbies);
+      console.log("Function in Key: order: ", person.order);
+      console.log("Calling order(): ", person.order());
+      console.log("Direct Function Call: greet(): ", person.greet());
+      console.log("Inner Object: address: ", person.address);
+      console.log("Private property: _email: ", person._email);
+      console.log("Dynamic Property: ['Indian Hometown'] (Use Box Operator): ", person["Indian Hometown"]); // Use Box Operator
+      console.log("Symbol [someSymbol] (Use Box Operator): ", person[someSymbol]); // Use Box Operator
+      console.log("Inherited Object (Developer) from (Person): ", developer);
+      console.log("Value for Programming Language from Inherited Object (Developer): ", developer.programmingLanguage);
+
+      // For...in Loop to access object properties
+      console.log("//////////////////////////////// RUNNING FOR IN LOOP ////////////////////////////////");
+      for (let anyName in person) {
+        console.log(anyName, " ", person[anyName]);
+      }
+
+      // Object Property Value (Assign/Change)
+      console.log("////////////////// OBJECT PROPERTY VALUE CHANGE //////////////////");
+      const car = {
+        model: "Honda",
+        type: "Sedan",
+      };
+      console.log("Car Object: ", car);
+      console.log("Car's type: ", car.type); // Sedan
+      car.type = "Hatchback";
+      console.log("Car Object After Change: ", car);
+      console.log("Car's type: ", car.type); // Hatchback
+
+      // Object Property Add / Delete
+      console.log("////////////////// OBJECT PROPERTY ADD / DELETE //////////////////");
+      const bike = {
+        model: "KTM",
+        color: "Black",
+      };
+      console.log("Bike Object: ", bike);
+      bike.version = 390;
+      bike["year"] = 2020;
+      console.log("Bike Object After Adding Two Properties: ", bike);
+      delete bike["year"];
+      delete bike.version;
+      console.log("Bike Object After Deleting Two Properties: ", bike);
+    </script>
+  </body>
+</html>
