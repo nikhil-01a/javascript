@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Object - Prototype</title>
+  </head>
+  <body>
+    <h1>Javascript Object - Prototype</h1>
+    <script>
+      // 1. Main Object (It is a function)
+
+      // 2. Constructor function
+      function NormalFunction(message) {
+        this.message = message;
+      }
+
+      // 2. Literal Object
+      const literalObject = {
+        name: "Nikhil",
+        age: 26,
+      };
+
+      // 3. Inherited Object
+      const inheritedObject = Object.create(literalObject);
+
+      // 5. Function Object
+      const functionObject = new NormalFunction("Good morning");
+
+      // All .prototype
+      console.log("prototype (Only for functions) of Object (a special function under the hood): ", Object.prototype);
+      console.log("prototype (Only for functions) of NormalFunction: ", NormalFunction.prototype);
+      console.log("prototype (Only for functions) of literalObject: ", literalObject.prototype);
+      console.log("prototype (Only for functions) of inheritedObject: ", inheritedObject.prototype);
+      console.log("prototype (Only for functions) of functionObject: ", functionObject.prototype);
+
+      // All .__proto__
+      console.log("__proto__ (Only for objects) of Object (a special function under the hood): ", Object.__proto__);
+      console.log("__proto__ (Only for objects) of NormalFunction: ", NormalFunction.__proto__);
+      console.log("__proto__ (Only for objects) of literalObject: ", literalObject.__proto__);
+      console.log("__proto__ (Only for objects) of inheritedObject: ", inheritedObject.__proto__);
+      console.log("__proto__ (Only for objects) of functionObject: ", functionObject.__proto__);
+    </script>
+  </body>
+</html>
