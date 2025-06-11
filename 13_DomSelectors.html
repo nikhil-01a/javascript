@@ -11,6 +11,10 @@
   <body>
     <h1 id="introLine">This is my page!</h1>
 
+    <h1 class="testDomClassObject">Hi this is first element</h1>
+    <h1 class="testDomClassObject">Hi this is second element</h1>
+    <h1 class="testDomClassObject">Hi this is third element</h1>
+
     <script>
       // Top node selectors
       console.log("This is inside body tag");
@@ -19,11 +23,19 @@
       console.log("Body Tag: ", document.body);
       console.log("Title Tag: ", document.title);
 
-      // getElementById("")
+      // getElementById(" ")
       let myIntroLine = document.getElementById("introLine");
       myIntroLine.innerHtml = "Welcome to my blog!"; // This changes the content in the above h1 tag
       myIntroLine.style.color = "red";
       myIntroLine.style.backgroundColor = "black";
+
+      // getElementByClassName(" ")
+      let elementsByClass = document.getElementsByClassName("testDomClassObject");
+      for (ele of elementsByClass) {
+        console.log(ele);
+        ele.style.color = "red";
+        ele.style.backgroundColor = "blue";
+      }
     </script>
   </body>
 </html>
