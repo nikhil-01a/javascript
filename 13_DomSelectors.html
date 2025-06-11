@@ -9,12 +9,21 @@
     </script>
   </head>
   <body>
+    <h1 id="introLine">This is my page!</h1>
+
     <script>
+      // Top node selectors
       console.log("This is inside body tag");
       console.log("HTML Tag: ", document.documentElement);
       console.log("HEAD Tag: ", document.head);
       console.log("Body Tag: ", document.body);
       console.log("Title Tag: ", document.title);
+
+      // getElementById("")
+      let myIntroLine = document.getElementById("introLine");
+      myIntroLine.innerHtml = "Welcome to my blog!"; // This changes the content in the above h1 tag
+      myIntroLine.style.color = "red";
+      myIntroLine.style.backgroundColor = "black";
     </script>
   </body>
 </html>
