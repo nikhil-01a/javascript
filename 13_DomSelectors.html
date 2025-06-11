@@ -29,12 +29,19 @@
       myIntroLine.style.color = "red";
       myIntroLine.style.backgroundColor = "black";
 
-      // getElementByClassName(" ")
+      // getElementSByClassName(" ")
       let elementsByClass = document.getElementsByClassName("testDomClassObject");
       for (ele of elementsByClass) {
         console.log(ele);
         ele.style.color = "red";
         ele.style.backgroundColor = "blue";
+      }
+
+      // getElementsByTagName(" ")
+      let elementsByTagName = document.getElementsByTagName("h1");
+      console.log("Printing all h1 elements: ");
+      for (ele of elementsByTagName) {
+        console.log(ele);
       }
     </script>
   </body>
