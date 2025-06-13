@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Dom Attributes</title>
+  </head>
+  <body>
+    <a id="mainURL" href="https://google.com" style="margin: 5px"> Google Link </a>
+    <br />
+    <button onclick="getUrl()" style="margin: 5px; margin-top: 10px">Get URL</button>
+    <br />
+    <button onclick="changeUrl()" style="margin: 5px">Change URL</button>
+
+    <script>
+      let mainUrlObj = document.getElementById("mainURL");
+
+      const getUrl = () => {
+        console.log(mainUrlObj.getAttribute("href"));
+      };
+      const changeUrl = () => {
+        mainUrlObj.setAttribute("href", "https://yahoo.com");
+        mainUrlObj.innerHTML = "Yahoo Link";
+      };
+    </script>
+  </body>
+</html>
