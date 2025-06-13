@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Learn DOM styling</title>
+  </head>
+  <body>
+    <!-- onClick event listener -->
+    <button onClick="changeStyle()">Change Style</button>
+    <button onClick="getSetInfoInConsole()">Show Manual Values In Console</button>
+    <button onClick="getDefaultInfoInConsole()">Show Default Values In Console</button>
+
+    <h1 id="heading">Welcome to Nikhil's world!</h1>
+    <h2>Here we go untouched!</h2>
+    <p>Some jargon</p>
+
+    <script>
+      let headingObject = document.getElementById("heading");
+      let bodyObject = document.body;
+
+      // Setting style using document
+      const changeStyle = () => {
+        headingObject.style.color = "blue";
+        headingObject.style.fontSize = "40px";
+        headingObject.style.border = "1px solid red";
+        headingObject.style.padding = "5px";
+        headingObject.style.weight = "bold";
+
+        bodyObject.style.color = "white";
+        bodyObject.style.background = "#e2e2e2";
+      };
+
+      const getSetInfoInConsole = () => {
+        console.log(headingObject.style.color);
+      };
+
+      const getDefaultInfoInConsole = () => {
+        let windowStyleObject = window.getComputedStyle(headingObject);
+        console.log(windowStyleObject.getPropertyValue("color"));
+      };
+    </script>
+  </body>
+</html>
