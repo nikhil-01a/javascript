@@ -1,6 +1,11 @@
 <html>
   <head>
     <title>Learn DOM styling</title>
+    <style>
+      .red {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
     <!-- onClick event listener -->
@@ -24,17 +29,19 @@
         headingObject.style.padding = "5px";
         headingObject.style.weight = "bold";
 
+        headingObject.className = headingObject.className + " red";
+
         bodyObject.style.color = "white";
         bodyObject.style.background = "#e2e2e2";
       };
 
       const getSetInfoInConsole = () => {
-        console.log(headingObject.style.color);
+        console.log("Heading Text Color (document): ", headingObject.style.color);
       };
 
       const getDefaultInfoInConsole = () => {
         let windowStyleObject = window.getComputedStyle(headingObject);
-        console.log(windowStyleObject.getPropertyValue("color"));
+        console.log("Heading Text Color (window): ", windowStyleObject.getPropertyValue("color"));
       };
     </script>
   </body>
