@@ -3,7 +3,7 @@
   <head>
     <title>Bulb World</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       html,
       body {
@@ -23,13 +23,34 @@
     <h1 style="text-align: center">TURN ON THE LIGHTS!!!</h1>
     <p style="text-align: center">This project was completed listening to Fred Again : Turn on the lights again!</p>
     <div style="text-align: center">
-      <button>Turn On</button>
-      <img src="BulbOffFinal.png" />
-      <button>Turn Off</button>
+      <button onclick="turnOn()">Turn On</button>
+      <img id="bulbImg" src="BulbOffFinal.png" style="cursor: pointer" />
+      <button onclick="turnOff()">Turn Off</button>
     </div>
     <div style="text-align: center">
-      <button>Toggle On/Off</button>
+      <button id="toggleButton" onclick="toggleBulb()">OFF</button>
     </div>
-    <script></script>
+    <script>
+      let toggleButtonObj = document.getElementById("toggleButton");
+      let imgObj = document.getElementById("bulbImg");
+      const turnOn = () => {
+        imgObj.setAttribute("src", "BulbOnFinal.png");
+        toggleButtonObj.innerHTML = "ON";
+      };
+
+      const turnOff = () => {
+        imgObj.setAttribute("src", "BulbOffFinal.png");
+        toggleButtonObj.innerHTML = "OFF";
+      };
+
+      const toggleBulb = () => {
+        if (imgObj.getAttribute("src") === "BulbOffFinal.png") turnOn();
+        else turnOff();
+      };
+
+      imgObj.addEventListener("click", function () {
+        toggleBulb();
+      });
+    </script>
   </body>
 </html>
