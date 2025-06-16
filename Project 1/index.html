@@ -4,6 +4,7 @@
     <title>Bulb World</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="bulbIcon.svg" type="image/svg+xml" />
     <style>
       html,
       body {
@@ -24,27 +25,29 @@
     <p style="text-align: center">This project was completed listening to Fred Again : Turn on the lights again!</p>
     <div style="text-align: center">
       <button onclick="turnOn()">Turn On</button>
-      <img id="bulbImg" src="BulbOffFinal.png" style="cursor: pointer" />
+      <img id="bulbImg" src="BulbOff.webp" style="cursor: pointer" />
       <button onclick="turnOff()">Turn Off</button>
     </div>
     <div style="text-align: center">
       <button id="toggleButton" onclick="toggleBulb()">OFF</button>
     </div>
     <script>
+      const bulbOnPath = "BulbOn.webp";
+      const bulbOffPath = "BulbOff.webp";
       let toggleButtonObj = document.getElementById("toggleButton");
       let imgObj = document.getElementById("bulbImg");
       const turnOn = () => {
-        imgObj.setAttribute("src", "BulbOnFinal.png");
+        imgObj.setAttribute("src", bulbOnPath);
         toggleButtonObj.innerHTML = "ON";
       };
 
       const turnOff = () => {
-        imgObj.setAttribute("src", "BulbOffFinal.png");
+        imgObj.setAttribute("src", bulbOffPath);
         toggleButtonObj.innerHTML = "OFF";
       };
 
       const toggleBulb = () => {
-        if (imgObj.getAttribute("src") === "BulbOffFinal.png") turnOn();
+        if (imgObj.getAttribute("src") === bulbOffPath) turnOn();
         else turnOff();
       };
 
