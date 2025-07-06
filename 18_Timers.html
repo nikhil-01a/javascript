@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Timers</title>
+  </head>
+  <body>
+    <div style="justify-items: center">
+      <p>Welcome to Javascript Timers World!</p>
+      <button onclick="startTimeout()">Start Timeout</button>
+      <button onclick="startInterval()">Start Interval</button>
+      <button onclick="stopTimeout()">Stop Timeout</button>
+      <button onclick="stopInterval()">Stop Interval</button>
+      <button onclick="stopAll()">Stop All</button>
+    </div>
+    <script>
+      let startTReference;
+      let startIReference;
+      function consoleLogSetTimeout() {
+        console.log("Hi there, I'm running setTimeout function");
+      }
+      function startTimeout() {
+        startTReference = setTimeout(consoleLogSetTimeout, 2000);
+        console.log("START TIMEOUT REFERENCE: ", startTReference);
+      }
+      function startInterval() {
+        startIReference = setInterval(() => {
+          console.log("Hi there, I'm running setInterval function");
+        }, 2000);
+        console.log("START INTERVAL REFERENCE: ", startIReference);
+      }
+      function stopTimeout() {
+        clearTimeout(startTReference);
+      }
+      function stopInterval() {
+        clearInterval(startIReference);
+      }
+      function stopAll() {
+        stopTimeout();
+        stopInterval();
+      }
+    </script>
+  </body>
+</html>
