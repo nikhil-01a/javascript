@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Learn DOM Manipulation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="mainDivSection" style="text-align: center">
+      <h1 id="welcomeLine">Hi there! Welcome to the page!</h1>
+      <p id="pageDescription">Enjoy your time spent on this page. Let us know if you would like to change anything!</p>
+      <button onclick="showExtra()">SHOW ME EXTRAS</button>
+      <button onclick="changeGreeting()">TREAT ME DIFFERENT</button>
+      <button onclick="resetEverything()">RESET</button>
+      <button onclick="showUglyText()">SHOW UGLY TEXT</button>
+    </div>
+    <script>
+      let newDivElement = document.createElement("div");
+      let divInsideDiv = document.createElement("div");
+      let textBefore = document.createElement("p");
+      let textAfter = document.createElement("p");
+      textBefore.textContent = "This page was created while learning DOM Manipulation";
+      textAfter.textContent = "Thanks for spending time on this boring page!";
+      let welcomeLine = document.getElementById("welcomeLine");
+      let mainDivElement = document.getElementById("mainDivSection");
+      let newTextNode = document.createTextNode("Let's ruin the page!");
+
+      function showExtra() {
+        mainDivElement.append(newDivElement);
+        textAfter.style.opacity = 1;
+        textBefore.style.opacity = 1;
+        newDivElement.append(textAfter);
+        mainDivElement.insertBefore(textBefore, welcomeLine);
+      }
+
+      const changeGreeting = function () {
+        welcomeLine.innerHTML = "Hello Wonderful! Welcome to this extremely useful page!";
+      };
+
+      const resetEverything = () => {
+        welcomeLine.innerHTML = "Hi there! Welcome to the page!";
+        if (mainDivElement.contains(newTextNode)) mainDivElement.removeChild(newTextNode);
+        fadeOut(mainDivElement, textBefore);
+        fadeOut(newDivElement, textAfter);
+      };
+
+      function showUglyText() {
+        mainDivElement.insertBefore(newTextNode, welcomeLine);
+      }
+
+      const fadeOut = (fromElement, elementToRemove) => {
+        elementToRemove.style.transition = "opacity 0.5s ease";
+        elementToRemove.style.opacity = 0;
+        setTimeout(() => {
+          if (fromElement.contains(elementToRemove)) fromElement.removeChild(elementToRemove);
+        }, 500);
+      };
+    </script>
+  </body>
+</html>
