@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Navigation</title>
+  </head>
+  <body>
+    <div id="mainContent" style="justify-items: center">
+      <h1 id="greeting">WELCOME</h1>
+      <h1 id="contentTitle">Javascript DOM Navigation</h1>
+      <p id="content">Hi, we are learning Javascript DOM Navigation. Javascript is a very powerful language for both frontend and backend.</p>
+      <button id="navigationBtn" onclick="performNav()">NAVIGATE!</button>
+    </div>
+
+    <script>
+      function performNav() {
+        const mainDiv = document.getElementById("mainContent");
+        let htmlElement = document.documentElement;
+
+        // First child node
+        let firstChildNode = mainDiv.firstChild;
+        console.log("Main Div's first child node's nodeName: ", firstChildNode.nodeName);
+
+        // First element child node
+        let firstEleChildNode = mainDiv.firstElementChild;
+        console.log("Main Div's first element child node's nodeName: ", firstEleChildNode.nodeName);
+
+        // Last child node
+        let lastChildNode = mainDiv.lastChild;
+        console.log("Main Div's last child node's nodeName: ", lastChildNode.nodeName);
+
+        // Last element child name
+        let lastEleChildNode = mainDiv.lastElementChild;
+        console.log("Main Div's last element child node nodeName: ", lastEleChildNode.nodeName);
+
+        // Parent node
+        let parentNode = htmlElement.parentNode;
+        console.log("HTML element's parent node: ", parentNode);
+
+        // Parent element
+        let parentElement = htmlElement.parentElement;
+        console.log("HTML element's parent element: ", parentElement);
+
+        // Sibling nodes
+        let contentTitle = document.getElementById("contentTitle");
+        let siblingBeforeTitle = contentTitle.previousSibling;
+        let siblingAfterTitle = contentTitle.nextSibling;
+        console.log("Sibling Before Title: ", siblingAfterTitle);
+        console.log("Sibling After Title: ", siblingAfterTitle);
+
+        // Element Sibling nodes
+        let eleSiblingBeforeTitle = contentTitle.previousElementSibling;
+        let eleSiblingAfterTitle = contentTitle.nextElementSibling;
+        console.log("Element Sibling Before Title: ", eleSiblingBeforeTitle);
+        console.log("Element Sibling After Title: ", eleSiblingAfterTitle);
+
+        // All child nodes
+        let allChildNodes = mainDiv.childNodes;
+        for (child of allChildNodes) {
+          console.log("1ST LOOP: Main Div's Child Node: ", child);
+        }
+
+        // All element child nodes
+        let allEleChildNodes = mainDiv.children;
+        for (eleChild of allEleChildNodes) {
+          console.log("2ND LOOP: Main Div's Element Child Node: ", eleChild);
+        }
+      }
+    </script>
+  </body>
+</html>
