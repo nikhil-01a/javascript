@@ -28,6 +28,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        /* Orbitron Google Font */
         font-family: "Orbitron", sans-serif;
         font-optical-sizing: auto;
         font-weight: 600;
@@ -35,7 +37,15 @@
       }
 
       .clock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 15%;
+        width: 40%;
         font-size: 150px;
+        background: #222222;
+        padding: 30px;
+        border-radius: 50px;
       }
     </style>
   </head>
@@ -50,8 +60,25 @@
         let hour = date.getHours();
         let minute = date.getMinutes();
         let second = date.getSeconds();
-        return `${hour} : ${minute} : ${second}`;
+
+        // 12 Hour Format
+        let amPM = hour >= 12 ? "PM" : "AM";
+        hour = hour % 12;
+        hour = hour == 0 ? 12 : hour;
+        hour = zeroFormatter(hour);
+        minute = zeroFormatter(minute);
+        second = zeroFormatter(second);
+
+        return `${hour} : ${minute} : ${second} : ${amPM}`;
+
+        // Shortcut
+        // return date.toLocaleTimeString();
       };
+
+      function zeroFormatter(num) {
+        return num <= 9 ? "0" + num : num;
+      }
+
       setInterval(() => {
         clockObject.innerHTML = getCurrentTime();
       }, 1000);
