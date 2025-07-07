@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+    <title>DIGITAL CLOCK</title>
+    <style>
+      /* Global Reset */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background: black;
+        color: white;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .clockContainer {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Orbitron", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .clock {
+        font-size: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clockContainer">
+      <span class="clock"></span>
+    </div>
+    <script>
+      let clockObject = document.querySelector(".clock");
+      const getCurrentTime = () => {
+        let date = new Date();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+        return `${hour} : ${minute} : ${second}`;
+      };
+      setInterval(() => {
+        clockObject.innerHTML = getCurrentTime();
+      }, 1000);
+    </script>
+  </body>
+</html>
