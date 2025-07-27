@@ -16,7 +16,7 @@
     <div class="container">
       <h1 class="text-center my-5">Resume Generator</h1>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 p-4 pt-0">
           <h3 class="text-center mb-4">Personal Information</h3>
           <div class="mb-3">
             <label class="form-label" for="name">Name</label>
@@ -43,8 +43,28 @@
             <input class="form-control" type="text" id="websiteLink" placeholder="Enter your personal website link (Optional)" />
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 p-4 pt-0">
           <h3 class="text-center mb-4">Professional Information</h3>
+          <div class="mb-3">
+            <label class="form-label" for="objective">Objective</label>
+            <textarea class="form-control" rows="2" id="objective" placeholder="Enter your objective"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Work Experience</label>
+            <textarea class="form-control" rows="3" placeholder="Enter your work experience"></textarea>
+          </div>
+          <!-- TODO: ADD NEW TEXT FIELDS ON BTN CLICK -->
+          <div class="container text-end">
+            <button class="mb-3 btn btn-secondary btn-sm" id="workExperienceButton">Add</button>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Education</label>
+            <textarea class="form-control" rows="3" placeholder="Enter your education"></textarea>
+          </div>
+          <!-- TODO: ADD NEW TEXT FIELDS ON BTN CLICK -->
+          <div class="container text-end">
+            <button class="mb-3 btn btn-secondary btn-sm" id="educationButton">Add</button>
+          </div>
         </div>
       </div>
     </div>
