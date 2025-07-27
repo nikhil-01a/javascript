@@ -49,22 +49,23 @@
             <label class="form-label" for="objective">Objective</label>
             <textarea class="form-control" rows="2" id="objective" placeholder="Enter your objective"></textarea>
           </div>
-          <div class="mb-3">
+          <div class="mb-3" id="weDiv">
             <label class="form-label">Work Experience</label>
-            <textarea class="form-control" rows="3" placeholder="Enter your work experience"></textarea>
+            <textarea class="form-control mb-3" rows="3" placeholder="Enter your work experience"></textarea>
+            <div class="container text-end" id="weBtnContainer">
+              <button onclick="addWEBox()" class="btn btn-secondary btn-sm">Add</button>
+            </div>
           </div>
-          <!-- TODO: ADD NEW TEXT FIELDS ON BTN CLICK -->
-          <div class="container text-end">
-            <button class="mb-3 btn btn-secondary btn-sm" id="workExperienceButton">Add</button>
-          </div>
-          <div class="mb-3">
+          <div class="mb-3" id="educationDiv">
             <label class="form-label">Education</label>
-            <textarea class="form-control" rows="3" placeholder="Enter your education"></textarea>
+            <textarea class="form-control mb-3" rows="3" placeholder="Enter your education"></textarea>
+            <div class="container text-end" id="eduBtnContainer">
+              <button onclick="addEduBox()" class="btn btn-secondary btn-sm">Add</button>
+            </div>
           </div>
-          <!-- TODO: ADD NEW TEXT FIELDS ON BTN CLICK -->
-          <div class="container text-end">
-            <button class="mb-3 btn btn-secondary btn-sm" id="educationButton">Add</button>
-          </div>
+        </div>
+        <div class="container p-4 pt-0 text-center">
+          <button class="btn btn-primary btn-lg">Generate CV</button>
         </div>
       </div>
     </div>
