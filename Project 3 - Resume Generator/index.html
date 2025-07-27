@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hi, this is a test HTML!</h1>
+    <div class="container">
+      <h1 class="text-center my-5">Resume Generator</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-center mb-4">Personal Information</h3>
+          <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-control" type="text" id="name" placeholder="Enter your full name" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-control" type="text" id="phone" placeholder="Enter your phone number" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="address">Address</label>
+            <textarea class="form-control" id="address" placeholder="Enter your address" rows="5"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="linkedIn">LinkedIn</label>
+            <input class="form-control" type="text" id="linkedIn" placeholder="Enter your LinkedIn profile (Optional)" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="github">GitHub</label>
+            <input class="form-control" type="text" id="github" placeholder="Enter your GitHub profile (Optional)" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="websiteLink">Personal Website</label>
+            <input class="form-control" type="text" id="websiteLink" placeholder="Enter your personal website link (Optional)" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-center mb-4">Professional Information</h3>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
