@@ -37,7 +37,17 @@ function generateResume() {
   document.getElementById("githubT").innerHTML = document.getElementById("github").value;
   document.getElementById("websiteLinkT").innerHTML = document.getElementById("websiteLink").value;
 
-  // Set professional info
+  // Set resume photo
+  let photoFileObject = document.getElementById("photo-file").files[0];
+  if (photoFileObject instanceof Blob) {
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(photoFileObject);
+    fileReader.onloadend = function () {
+      document.getElementById("photo-resume").src = fileReader.result;
+    };
+  }
+
+  // Set objective
   document.getElementById("objectiveT").innerHTML = document.getElementById("objective").value;
 
   // Set Work Experience
