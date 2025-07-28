@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- Questions Form -->
-    <div class="container" id="questions-form">
+    <div class="container" id="question-form">
       <h1 class="text-center my-5">Resume Generator</h1>
       <div class="row">
         <div class="col-md-6 p-4 pt-0">
@@ -67,28 +67,32 @@
         </div>
       </div>
       <div class="container p-4 pt-0 text-center">
-        <button class="btn btn-primary btn-lg">Generate CV</button>
+        <button onclick="generateResume()" class="btn btn-primary btn-lg">Generate CV</button>
       </div>
     </div>
     <!-- Resume -->
-    <div class="container">
+    <div class="container" id="resume-page">
       <div class="row">
         <div class="col-md-4 py-5 background" style="min-height: 100vh">
           <div class="container text-center mb-3">
             <img src="DefaultProfilePic.jpg" alt="Profile Pic Not Available" class="img-fluid profile-pic" />
           </div>
           <div class="container mb-3">
-            <p>+1 201 658 3034</p>
-            <p>#07, 37th Street, Queens, New York City, USA</p>
+            <p id="phoneT">+1 201 658 3034</p>
+            <p id="addressT">#07, 37th Street, Queens, New York City, USA</p>
           </div>
           <hr />
-          <p><a href="">www.test1.com</a></p>
-          <p><a href="">www.test2.com</a></p>
-          <p><a href="">www.test3.com</a></p>
+          <p><a id="linkedInT" href="">www.test1.com</a></p>
+          <p><a id="githubT" href="">www.test2.com</a></p>
+          <p><a id="websiteLinkT" href="">www.test3.com</a></p>
+          <hr />
+          <div class="container text-start mt-4">
+            <button onclick="printResume()" class="btn btn-secondary btn-md">Print Resume</button>
+          </div>
         </div>
         <div class="col-md-8 py-5">
           <!-- Name Heading -->
-          <h1 class="text-center mb-3" style="font-weight: 800">Nikhil Kumar Goutham</h1>
+          <h1 class="text-center mb-3" style="font-weight: 800" id="nameT">Nikhil Kumar Goutham</h1>
           <!-- Objective Card -->
           <div class="card mb-3">
             <div class="card-header background">Objective</div>
