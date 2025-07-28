@@ -3,6 +3,7 @@ function addWEBox() {
   let newWorkObj = document.createElement("textarea");
   newWorkObj.classList.add("form-control");
   newWorkObj.classList.add("mb-3");
+  newWorkObj.classList.add("weClass");
   newWorkObj.setAttribute("rows", 3);
   newWorkObj.setAttribute("placeholder", "Enter your work experience");
 
@@ -17,6 +18,7 @@ function addEduBox() {
   let newEduBoxObj = document.createElement("textarea");
   newEduBoxObj.classList.add("mb-3");
   newEduBoxObj.classList.add("form-control");
+  newEduBoxObj.classList.add("eduClass");
   newEduBoxObj.setAttribute("rows", 3);
   newEduBoxObj.setAttribute("placeholder", "Enter your education");
 
@@ -34,6 +36,25 @@ function generateResume() {
   document.getElementById("linkedInT").innerHTML = document.getElementById("linkedIn").value;
   document.getElementById("githubT").innerHTML = document.getElementById("github").value;
   document.getElementById("websiteLinkT").innerHTML = document.getElementById("websiteLink").value;
+
+  // Set professional info
+  document.getElementById("objectiveT").innerHTML = document.getElementById("objective").value;
+
+  // Set Work Experience
+  let weObjects = document.getElementsByClassName("weClass");
+  let weListObjects = "";
+  for (let weObject of weObjects) {
+    weListObjects += `<li>${weObject.value}</li>`;
+  }
+  document.getElementById("weUl").innerHTML = weListObjects;
+
+  // Set Education
+  let eduObjects = document.getElementsByClassName("eduClass");
+  let eduListObjects = "";
+  for (let eduObject of eduObjects) {
+    eduListObjects += `<li>${eduObject.value}</li>`;
+  }
+  document.getElementById("eduUl").innerHTML = eduListObjects;
 
   // Hide form and show resume
   document.getElementById("question-form").style.display = "none";
