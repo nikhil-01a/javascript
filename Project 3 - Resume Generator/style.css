@@ -1,0 +1,12 @@
+#questions-form {
+  display: none;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 200px;
+}
+
+.background {
+  background-color: black;
+}
