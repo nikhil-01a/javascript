@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Date Object</title>
+  </head>
+  <body>
+    <h1>Learning Javascript Date Object</h1>
+    <script>
+      // Create Date
+      let currentDate = new Date();
+      let parametersDate = new Date(2020, 0, 30, 23, 59, 59, 500);
+      let dateFromStringFormat = new Date("30 January 2020 23:59:59.500");
+      let dateFromTimestamp = new Date(1517356800000);
+      console.log("Empty constructor date = ", currentDate);
+      console.log("Date from parameters constructor = ", parametersDate);
+      console.log("Date from String format: '30 January 2020 23:59:59.500' = ", dateFromStringFormat);
+      console.log("Date from Timestamp: '1517356800000' = ", dateFromTimestamp);
+
+      // Date properties and methods
+      // Convert
+      console.log("currentDate.toString() = ", currentDate.toString());
+      console.log("currentDate.toDateString() = ", currentDate.toDateString());
+      console.log("currentDate.toLocaleDateString() = ", currentDate.toLocaleDateString());
+      console.log("currentDate.toLocaleTimeString() = ", currentDate.toLocaleTimeString());
+      console.log("currentDate.toISOString() = ", currentDate.toISOString());
+      console.log("currentDate.toUTCString() = ", currentDate.toUTCString());
+      // Get
+      console.log("currentDate.getFullYear() = ", currentDate.getFullYear());
+      console.log("currentDate.getMonth() (0 based month index, 0 is January) = ", currentDate.getMonth());
+      console.log("currentDate.getDate() (day number in the month) = ", currentDate.getDate());
+      console.log("currentDate.getDay() (day number in the week, 0 based weekday index, 0 is Sunday) = ", currentDate.getDay());
+      console.log("currentDate.getHours() = ", currentDate.getHours());
+      console.log("currentDate.getMinutes() = ", currentDate.getMinutes());
+      console.log("currentDate.getMilliseconds() = ", currentDate.getMilliseconds());
+    </script>
+  </body>
+</html>
