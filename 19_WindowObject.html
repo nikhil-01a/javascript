@@ -30,29 +30,72 @@
       let offsetHeightValue = window.document.documentElement.offsetHeight;
       console.log("Offset height of the page: ", offsetHeightValue);
 
+      // Window - Location properties
+      let fullPathObj = window.location.href;
+      let hostnameObj = window.location.hostname;
+      let portNumberObj = window.location.port;
+      let pathNameobj = window.location.pathname;
+      console.log("Full Path: ", fullPathObj);
+      console.log("Host name: ", hostnameObj);
+      console.log("Port number: ", portNumberObj);
+      console.log("Path name: ", pathNameobj);
+
       // 2. FUNCTIONS //
+
+      // Window Global functions
       let name = window.prompt("Please enter your name: ");
       let nameBoolean = window.confirm(`Is your name really ${name}?`);
       if (nameBoolean) window.alert(`Hi ${name}!`);
       else window.alert("You're not welcome here!");
 
-      // open()
-      let windowReference = window.open("18_Timers.html", "", "resizable=yes");
+      // Each setTimeout timer starts immediately when the page loads, this is classic example of why would need either asyn - await or promisses in future!
+      // Also for some reason the timer starts after the alert, prompt and confirm dialog box functions, just an observation. These three functions freeze the timer indeed.
 
-      // resizeTo()
+      // open()
       setTimeout(() => {
-        windowReference.resizeTo(600, 400);
+        let windowReference = window.open("18_Timers.html", "", "resizable=yes");
+        // resizeTo()
+        setTimeout(() => {
+          windowReference.resizeTo(600, 400);
+        }, 3000);
+
+        // moveTo()
+        setTimeout(() => {
+          windowReference.moveTo(100, 100);
+        }, 6000);
+
+        // close()
+        setTimeout(() => {
+          console.log("closing project!");
+          windowReference.close();
+        }, 9000);
       }, 3000);
 
-      // moveTo()
+      // Window - Location functions
+      // reload() will start everything from the beginning so commenting it
+      // setTimeout(() => {
+      //   console.log("Refreshing current page!");
+      //   window.location.reload();
+      // }, 15000);
       setTimeout(() => {
-        windowReference.moveTo(100, 100);
-      }, 6000);
+        console.log("Redirecting this page to Digital Clock!");
+        window.location.assign("Project2-DigitalClock/index.html");
+      }, 18000);
 
-      // close()
-      setTimeout(() => {
-        windowReference.close();
-      }, 9000);
+      // Window - History functions
+      // We would back() in Digital Clock page to come back and then forward from this page again. But we get the idea of what these functions do, so yea.
+      // setTimeout(() => {
+      //   console.log("Going back!");
+      //   window.history.back();
+      // }, 21000);
+      // setTimeout(() => {
+      //   console.log("Going forward!");
+      //   window.history.forward();
+      // }, 24000);
+      // setTimeout(() => {
+      //   console.log("Going back again!");
+      //   window.history.back();
+      // }, 27000);
     </script>
   </body>
 </html>
