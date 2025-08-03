@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Object</title>
+  </head>
+  <body>
+    <script>
+      // Window holds all global properties and functions, these can be used directly as well, without "window."
+
+      // 1. PROPERTIES //
+      window.document.body.style.backgroundColor = "#000000";
+
+      // Window heights
+      let innerHeightValue = window.innerHeight;
+      console.log("Inner height of the page: ", innerHeightValue);
+      let outerHeightValue = window.outerHeight;
+      console.log("Outer height of the page: ", outerHeightValue);
+      let innerWidthValue = window.innerWidth;
+      console.log("Inner Width of the page: ", innerHeightValue);
+      let outerWidthValue = window.outerWidth;
+      console.log("Outer Width of the page: ", outerWidthValue);
+
+      // Window - Document Element (HTML node) heights
+      let scrollHeightValue = window.document.documentElement.scrollHeight;
+      console.log("Scroll height of the page: ", scrollHeightValue);
+      let clientHeightValue = window.document.documentElement.clientHeight;
+      console.log("Client height of the page: ", clientHeightValue);
+      let offsetHeightValue = window.document.documentElement.offsetHeight;
+      console.log("Offset height of the page: ", offsetHeightValue);
+
+      // 2. FUNCTIONS //
+      let name = window.prompt("Please enter your name: ");
+      let nameBoolean = window.confirm(`Is your name really ${name}?`);
+      if (nameBoolean) window.alert(`Hi ${name}!`);
+      else window.alert("You're not welcome here!");
+
+      // open()
+      let windowReference = window.open("18_Timers.html", "", "resizable=yes");
+
+      // resizeTo()
+      setTimeout(() => {
+        windowReference.resizeTo(600, 400);
+      }, 3000);
+
+      // moveTo()
+      setTimeout(() => {
+        windowReference.moveTo(100, 100);
+      }, 6000);
+
+      // close(0)
+      setTimeout(() => {
+        windowReference.close();
+      }, 9000);
+    </script>
+  </body>
+</html>
